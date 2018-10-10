@@ -133,6 +133,8 @@ ul {
 
 footer {
   border-top: 1px solid black;
+  position: fixed;
+  bottom: 0;
 }
 
 /* ----SearchBar */

@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import CreateBookButton from '../CreateBookButton';
 
 class Profile extends Component {
   constructor(){
     super();
-    this.state={listOfBooks: []};
+    this.state={
+      listOfBooks: [],
+    };
   }
   
   getAllBooks = () => {
-    axios.get(`http://localhost:5000/api/profile/book/create`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/profile/book/create`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         listOfBooks: responseFromApi.data
@@ -19,7 +22,7 @@ class Profile extends Component {
       console.log(err)
     })
   }
-  
+
   componentDidMount() {
     this.getAllBooks();
   }
@@ -52,11 +55,8 @@ class Profile extends Component {
             )})
           }
             </div>
-            <Link  to='/profile/book/create'>
-                <button>Add Book</button>
-              </Link>
-        </div>
-        
+                <CreateBookButton />
+        </div>       
       </div>
     )
   }

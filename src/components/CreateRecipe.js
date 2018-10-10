@@ -17,7 +17,7 @@ class AddRecipe extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const {name, instructions, ingrediants, image, preptime} = this.state;
-    axios.post("http://localhost:5000/api/recipes/create", {name,instructions, image, ingrediants, preptime}, {withCredentials:true})
+    axios.post(`${process.env.REACT_APP_API_URL}/recipes/create`, {name,instructions, image, ingrediants, preptime}, {withCredentials:true})
     .then(() => {
       this.props.getData();
       this.setState({
