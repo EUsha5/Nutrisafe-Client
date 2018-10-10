@@ -40,8 +40,8 @@ class AddRecipe extends Component {
 
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="page-height">
+        <form className="create-form" onSubmit={this.handleFormSubmit}>
           <label>Name:</label>
           <input type="text" name="name" value={this.state.name} onChange={e => this.handleChange(e)}/>
           <label>Instructions:</label>

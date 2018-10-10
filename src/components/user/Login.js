@@ -43,20 +43,21 @@ class Login extends Component {
     // console.log(this.service.login)
     
     return(
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="auth">
+        <form className="auth-form" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+          <input className="input" type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
           
           <label>Password:</label>
-          <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+          <input className="input" type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
           <input type="submit" value="Login" />
         </form>
   
-        <p>Don't have an account? 
-            <Link to={"/signup"}> Signup</Link>
-        </p>
+        <div className="no-acct">
+          <p>Don't have an account?</p>
+          <Link to={"/signup"}>Signup</Link>
+        </div>
   
       </div>
     )
