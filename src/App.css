@@ -58,15 +58,15 @@
   padding: 7vh 3vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   flex-direction: column;
-  background-color: rgba(50,220,100, 0.7);
+  background-color: rgba(50,220,100, 0.9);
   border-radius: 19px;
 }
 
 .no-acct {
   border: 1px solid black;
-  background-color: rgba(50,220,100, 0.7);
+  background-color: rgba(50,220,100, 0.9);
   border-radius: 5px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
@@ -87,6 +87,7 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
 }
+
 
 .profile-height {
   height: 85vh;
@@ -115,6 +116,25 @@
   flex-direction: column;
 }
 
+.recipe-height {
+  background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg);
+  background-size: cover;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+}
+
+.recipe-img {
+  align-self: flex-start;
+}
+
+.nutri-values {
+  align-self: flex-end;
+}
+
 .create-form {
   border: 1px solid black;
   width: 25vw;
@@ -123,7 +143,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(50,220,100, 0.7);
+  background-color: rgba(50,220,100, 0.9);
   border-radius: 19px;
 }
 ul {

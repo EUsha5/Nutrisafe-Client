@@ -10,6 +10,8 @@ import RecipeBook from './components/RecipeBook';
 import Recipe from './components/Recipe';
 import CreateRecipe from './components/CreateRecipe';
 import Footer from './components/Footer';
+import ProtectedRoute from './components/user/protected-route';
+
 
 class App extends Component {
   constructor(props) {
@@ -18,12 +20,7 @@ class App extends Component {
     this.service = new AuthService();
   }
 
-  getTheUser = (userObj) => {
-    this.setState({
-      loggedInUser: userObj
-    })
-  }
-
+  
   fetchUser(){
     // console.log("running the fetch user function ******************");
     if(this.state.loggedInUser === null){
@@ -42,6 +39,12 @@ class App extends Component {
       }) 
     }
   }
+  
+  getTheUser = (userObj) => {
+    this.setState({
+      loggedInUser: userObj
+    })
+  }
 
   render() {
     this.fetchUser();
@@ -51,10 +54,10 @@ class App extends Component {
         <Switch>
           <Route exact path="/signup" render={() =><Signup setTheUser={this.getTheUser}/>} />
           <Route exact path='/' render={() => <Login setTheUser={this.getTheUser}/>} />
-          <Route exact path="/profile" render={() => <Profile />} />
-          <Route exact path="/profile/book/:id" render={() => <RecipeBook />} />
-          <Route exact path="/recipes/:id" render={() => <Recipe />} />
-          <Route exact path="/recipes/create/:id" render={() => <CreateRecipe />} />
+          <ProtectedRoute  path="/profile" user={this.state.loggedInUser} component= {Profile} />
+          <ProtectedRoute exact path="/profile/book/:id" render={() => <RecipeBook />} />
+          <ProtectedRoute exact path="/recipes/:id" render={() => <Recipe />} />
+          <ProtectedRoute exact path="/recipes/create/:id" render={() => <CreateRecipe />} />
        </Switch>
       <Footer />
       </div>

@@ -20,7 +20,7 @@ class CreateBookButton extends Component {
 
   
   render() {
-    console.log('=========STATE=========', this.state)
+    // console.log('=========STATE=========', this.state)
     return (
       <div>
         <button onClick={this.toggleHidden.bind(this)}>
