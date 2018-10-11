@@ -12,7 +12,7 @@ class Profile extends Component {
   }
   
   getAllBooks = () => {
-    axios.get(`${process.env.REACT_APP_API_URL}/profile/book/create`, {withCredentials:true})
+    axios.get(process.env.REACT_APP_API_URL + "/profile/book/create", {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         listOfBooks: responseFromApi.data
@@ -55,7 +55,7 @@ class Profile extends Component {
             )})
           }
             </div>
-                <CreateBookButton />
+                <CreateBookButton aquireData={this.getAllBooks()}/>
         </div>       
       </div>
     )
