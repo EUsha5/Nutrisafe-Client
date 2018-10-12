@@ -33,19 +33,16 @@ class Navbar extends Component {
       return(
 
         <nav className="navbar-logout">
-          <SearchBar searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
           <ul>
-            <li>Welcome, {this.state.loggedInUser.firstName}</li>
             <li><Link to='/profile'>Profile</Link></li>
-            <li><Link to='/profile/book/:id'>RecipeBook</Link></li>
+            <li><Link to='/book/:id'>RecipeBook</Link></li>
             <li><Link to='/recipes/:id'>Recipe</Link></li>
-            <li><Link to='/recipes/create/:id'>CreateRecipe</Link></li>
-            <li>
-              {/* <Link to='/'> */}
-                <button onClick={() => this.logoutUser()}>Logout</button>
-              {/* </Link> */}
-            </li>
           </ul>
+          <SearchBar searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
+            <h3>Welcome, {this.state.loggedInUser.firstName}</h3>
+            <Link to='/'>
+              <button onClick={() => this.logoutUser()}>Logout</button>
+            </Link>
         </nav>
 
       )
@@ -57,10 +54,8 @@ class Navbar extends Component {
             <li><Link to='/'>Login</Link></li>
             <li><Link to='/signup'>Signup</Link></li>
             <li><Link to='/profile'>Profile</Link></li>
-            <li><Link to='/profile/book/:id'>RecipeBook</Link></li>
+            <li><Link to='/book/:id'>RecipeBook</Link></li>
             <li><Link to='/recipes/:id'>Recipe</Link></li>
-            <li><Link to='/recipes/create/:id'>CreateRecipe</Link></li>
-
           </ul>
         </nav>
       )

@@ -19,7 +19,6 @@ class Profile extends Component {
         this.setState({
           listOfBooks: responseFromApi.data.recipebook
         })
-          // console.log('========BOOKS========', responseFromApi.data)
       })
       .catch((err) => {
         console.log(err)
@@ -37,8 +36,10 @@ class Profile extends Component {
           console.log('++++++++++LITTLEBOOK+++++++++', book)
           return (
             <div key={book._id}>
-              <Link to={`/profile/book/${book._id}`}>
-                <h3>{book.title}</h3>
+              <Link to={`/book/${book._id}`}>
+                <button className="book-btn">{book.title}</button>
+                <br/>
+                <br/>
               </Link>
             </div>
           )
@@ -47,41 +48,22 @@ class Profile extends Component {
     }
   }
 
-//edit profile 
-// editProfile = () => {
-//   .then( response => {
-//     console.log("^^^^^^^^RESPONSE^^^^^^^^^", response)
-//     this.setState({
-//       aboutme: ''
-//     })
-//   })
-//   .catch((err) => {
-//     console.log(err)
-//   })
-// }
-
-
-  
 handleFormSubmit = (event) => {
   const aboutme = this.state.aboutme;
   event.preventDefault();
-  axios.put(process.env.REACT_APP_API_URL + `/profile/${this.props.loggedInUser._id}`, { withCredentials: true })
+  axios.put(process.env.REACT_APP_API_URL + `/profile/${this.props.loggedInUser._id}`,{aboutme}, { withCredentials: true })
   .then((response) => {
 console.log('*********RESPONSE*******', response)
-  //  let blah = this.props.loggedInUser;
-    // this.props.history.push('/profile/:id')
   })
   .catch(err => {
     console.log(err)
   })
-
 }  
-    handleAboutMeChange = (event) => {
-    console.log('%%%%%%%%%%%ABOUTME%%%%%%%%%%%', this.state.aboutme)
-    this.setState({
-      aboutme: event.target.value
-    })
-  }
+
+handleChange = (event) => {  
+  const {name, value} = event.target;
+  this.setState({[name]: value});
+}
 
 render() {
     // console.log('++++++++++LITTLEBOOK+++++++++', this.showAllBooks)
@@ -91,12 +73,12 @@ render() {
       <div className="profile-height">
         <div className="profile-info">
           <div className="about-me">
-            <h2>About {this.props.loggedInUser.firstName}:</h2>
+            <h2 className="about-title">About {this.props.loggedInUser.firstName}:</h2>
             <span>{this.props.loggedInUser.aboutme}</span>
           </div>
-          <div>
+          <div className="total">
             <h3>Total Recipes: <span>#</span></h3>
-            <h3>Total Books: <span>#</span></h3>
+            <h3>Total Books: <span>{this.props.loggedInUser.recipebook.length}</span></h3>
           </div>
         </div>
         <div>
@@ -105,12 +87,12 @@ render() {
             {this.showAllBooks()}
           </div>
         </div>
-        {/* <CreateBookButton aquireData={this.getAllBooks()} /> */}
-        <div>
+        <CreateBookButton acquireData={this.getAllBooks} />
+        <div className="edit-about">
           <h3>Edit Profile:</h3>
           <form onSubmit={this.handleFormSubmit}>
           <label>About Me:</label>
-          <textarea type="text" name="aboutme" value={this.state.aboutme} onChange={e=>this.handleAboutMeChange(e)}/>
+          <textarea type="text" name="aboutme" value={this.state.aboutme} onChange={e=>this.handleChange(e)}/>
           <input type="submit" value="Edit"/>
           </form>
         </div>

@@ -26,7 +26,7 @@ class CreateBookButton extends Component {
         <button onClick={this.toggleHidden.bind(this)}>
           Add Book
         </button>
-        {!this.state.isHidden && <Child getData={() => this.props.aquireData} />}
+        {!this.state.isHidden && <Child getData={() => this.props.acquireData} />}
       </div>
     );
   }
