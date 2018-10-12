@@ -61,7 +61,7 @@ class Signup extends Component {
 
         <div className="no-acct">
           <p>Already have account?</p>
-          <Link to={"/"}>Login</Link>
+          <Link className="submit-btn" to={"/"}>Login</Link>
         </div>
 
       </div>

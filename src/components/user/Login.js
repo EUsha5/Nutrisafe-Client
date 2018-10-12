@@ -51,12 +51,12 @@ class Login extends Component {
           <label>Password:</label>
           <input className="input" type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           
-          <input type="submit" value="Login" />
+          <input className="submit-btn" type="submit" value="Login" />
         </form>
   
         <div className="no-acct">
           <p>Don't have an account?</p>
-          <Link to={"/signup"}>Signup</Link>
+          <Link className="submit-btn" to={"/signup"}>Signup</Link>
         </div>
   
       </div>

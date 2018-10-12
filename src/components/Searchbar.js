@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
+
+
+import axios from 'axios';
 // class SearchBar extends Component {
 //   constructor (props) {
 //     super(props)
@@ -77,6 +80,7 @@ class SearchBar extends Component {
   constructor(props){
     super(props);
     this.state = {
+      clicks: 0,
       term:'',
       selectedOption: null,
       options: [
@@ -103,8 +107,12 @@ class SearchBar extends Component {
       'app_id=40a3d7f6&app_key=7a70e9e0297764b6142565c461606b6f'
     ];
   
+    // console.log("}{}{}{}{}{}}{}{{}}{}{}{}}{}{}{}}{}{}}}{}")
     fetch(`https://api.edamam.com/search?q=${term}&${recipeSearchKeys[Math.floor(Math.random() * 10)]}`)
     .then(res => {
+      console.log('=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+      // res.body.locked = false;
+      // console.log('++++++++Response++++++++', res);
       if (res.status !== 200) {
         this.fetchRecipes(term);
         return null;
@@ -113,20 +121,59 @@ class SearchBar extends Component {
     })
     .then(res => {
       if (res === null ) {
-        console.log('used API key hit');
+        // console.log('used API key hit');
         return null;
       }
       let selectOptions = [];
 
-      res.hits.map(recipe => {
+      this.setState({clicks: this.state.clicks+1})
+
+
+      
+      res.hits.forEach(recipe => {
         // Saves recipe id and name
         const value = recipe.recipe.uri;
         const label = recipe.recipe.label;
         const ingredients = recipe.recipe.ingredients;
-
+        
         selectOptions.push({ value, label, ingredients })
       })
-      this.setState({ options: selectOptions })
+      this.setState({ options: selectOptions }, ()=>console.log('++++++++++++++',this.state))
+      
+      // console.log('+++++++++STATE++++++++', this.state.data.recipe)
+      
+      if(res.hits.length < 10){
+        console.log("here we GOOOOOOOOO")
+
+
+        
+
+      axios.post(process.env.REACT_APP_API_URL + '/currentrecipe', res.hits[0], {withCredentials: true})
+      .then(()=>{
+
+
+        console.log(res.hits)
+        this.props.history.push(`/recipes/searchResults`)
+
+
+
+
+      })
+        
+        
+        
+         
+
+
+
+
+      }
+
+
+
+
+      // console.log("the history ==================== ", this.props)
+
     })
   }
 

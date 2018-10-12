@@ -53,6 +53,7 @@ handleFormSubmit = (event) => {
   event.preventDefault();
   axios.put(process.env.REACT_APP_API_URL + `/profile/${this.props.loggedInUser._id}`,{aboutme}, { withCredentials: true })
   .then((response) => {
+    this.setState = "";
 console.log('*********RESPONSE*******', response)
   })
   .catch(err => {
@@ -74,7 +75,7 @@ render() {
         <div className="profile-info">
           <div className="about-me">
             <h2 className="about-title">About {this.props.loggedInUser.firstName}:</h2>
-            <span>{this.props.loggedInUser.aboutme}</span>
+            <span className="about-text">{this.props.loggedInUser.aboutme}</span>
           </div>
           <div className="total">
             <h3>Total Recipes: <span>#</span></h3>

@@ -8,6 +8,7 @@ class Navbar extends Component {
     super(props);
     this.state = {loggedInUser: null};
     this.service = new AuthService();
+    
   }
   componentWillReceiveProps(nextProps) {
     this.setState({...this.state, loggedInUser: nextProps["userInSession"]})
@@ -34,30 +35,32 @@ class Navbar extends Component {
 
         <nav className="navbar-logout">
           <ul>
-            <li><Link to='/profile'>Profile</Link></li>
-            <li><Link to='/book/:id'>RecipeBook</Link></li>
-            <li><Link to='/recipes/:id'>Recipe</Link></li>
+            <Link className="book-btn" to='/profile'>Profile</Link>
+            <Link className="book-btn" to='/book/:id'>RecipeBook</Link>
+            <Link className="book-btn" to='/recipes/searchResults'>Recipe</Link>
           </ul>
-          <SearchBar searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
-            <h3>Welcome, {this.state.loggedInUser.firstName}</h3>
+          <SearchBar {...this.props} searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
+          <div className="spacing">
+            <h3 className="username">Welcome, {this.state.loggedInUser.firstName}</h3>
             <Link to='/'>
-              <button className="book-btn" onClick={() => this.logoutUser()}>Logout</button>
+              <button className="book-btn logout" onClick={() => this.logoutUser()}>Logout</button>
             </Link>
+          </div>
         </nav>
 
       )
     } else {
       return ( 
         <nav className="navbar-login">
+        <div className="nav-bar-spacing">
+            <Link className="btn-btn" to='/profile'>Profile</Link>
+            <Link className="btn-btn" to='/book/:id'>RecipeBook</Link>
+            <Link className="btn-btn" to='/recipes/searchResults'>Recipe</Link>
+        </div>
+        <SearchBar {...this.props} searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
           <ul>
-            <li><Link to='/profile'>Profile</Link></li>
-            <li><Link to='/book/:id'>RecipeBook</Link></li>
-            <li><Link to='/recipes/:id'>Recipe</Link></li>
-          </ul>
-        <SearchBar />
-          <ul>
-            <li className="book-btn"><Link to='/'>Login</Link></li>
-            <li className="book-btn"><Link to='/signup'>Signup</Link></li>
+            <Link className="book-btn" to='/'>Login</Link>
+            <Link className="book-btn" to='/signup'>Signup</Link>
           </ul>
         </nav>
       )

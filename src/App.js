@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Router} from 'react-router-dom';
 import AuthService from './components/user/authService';
 import Signup from './components/user/Signup';
 import Login from './components/user/Login';
@@ -49,15 +49,17 @@ class App extends Component {
     this.fetchUser();
     return (
       <div className="App">
-      <Navbar setTheUser={this.getTheUser} userInSession={this.state.loggedInUser} />
+      <Navbar {...this.props} setTheUser={this.getTheUser} userInSession={this.state.loggedInUser} />
         <Switch>
+
           <Route exact path="/signup" render={() =><Signup setTheUser={this.getTheUser}/>} />
-          <Route exact path='/' render={() => <Login setTheUser={this.getTheUser}/>} />
+          <Route exact path='/' {...this.props} render={() => <Login setTheUser={this.getTheUser}/>} />
           <ProtectedRoute  path="/profile" user={this.state.loggedInUser} component= {Profile} />
-          <Route exact path="/book/:id" component={RecipeBook} />
-          <ProtectedRoute exact path="/recipes/:id" render={() => <Recipe />} />
-       </Switch>
+          <Route exact path="/book/:id" {...this.props} component={RecipeBook} />
+          <Route exact path="/recipes/searchResults" {...this.props} component={Recipe} />
+
       <Footer />
+       </Switch>
       </div>
     );
   }
