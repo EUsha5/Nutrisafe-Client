@@ -172,7 +172,7 @@ ul{
 .recipe-height {
   background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg);
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
