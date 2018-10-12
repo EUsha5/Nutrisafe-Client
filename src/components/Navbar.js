@@ -41,7 +41,7 @@ class Navbar extends Component {
           <SearchBar searchBoxName={"userNameSearch"} onSearchTermChange={this.onSearch} />
             <h3>Welcome, {this.state.loggedInUser.firstName}</h3>
             <Link to='/'>
-              <button onClick={() => this.logoutUser()}>Logout</button>
+              <button className="book-btn" onClick={() => this.logoutUser()}>Logout</button>
             </Link>
         </nav>
 
@@ -49,13 +49,15 @@ class Navbar extends Component {
     } else {
       return ( 
         <nav className="navbar-login">
-        <SearchBar />
           <ul>
-            <li><Link to='/'>Login</Link></li>
-            <li><Link to='/signup'>Signup</Link></li>
             <li><Link to='/profile'>Profile</Link></li>
             <li><Link to='/book/:id'>RecipeBook</Link></li>
             <li><Link to='/recipes/:id'>Recipe</Link></li>
+          </ul>
+        <SearchBar />
+          <ul>
+            <li className="book-btn"><Link to='/'>Login</Link></li>
+            <li className="book-btn"><Link to='/signup'>Signup</Link></li>
           </ul>
         </nav>
       )
