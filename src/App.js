@@ -58,6 +58,7 @@ class App extends Component {
           <Route exact path="/book/:id" {...this.props} component={RecipeBook} />
           <Route exact path="/recipes/searchResults" {...this.props} component={Recipe} />
 
+       
        </Switch>
       <Footer />
       </div>

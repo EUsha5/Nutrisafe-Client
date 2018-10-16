@@ -40,6 +40,9 @@
 
 a {
   text-decoration: none;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 .navbar-login{
@@ -121,7 +124,7 @@ ul{
 }
 
 .profile-height {
-  height: 100vh;
+  height: 100%;
   background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg);
   background-size: cover;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -196,6 +199,10 @@ ul{
 .recipe-ingredients{
   border: 1px solid black;
   background-color: rgba(50,220,100, 0.9);
+}
+
+.og-url{
+  background-color: rgba(183, 42, 42, 0.7);
 }
 
 .book-btn {
@@ -283,9 +290,9 @@ ul{
 
 footer {
   border-top: 1px solid black;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  bottom: 0;
+  /* bottom: 0; */
   background-color: rgb(22, 63, 130);
   display: flex;
   align-content: center;

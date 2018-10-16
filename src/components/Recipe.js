@@ -77,7 +77,7 @@ getRecipe = () => {
           <h2>Instructions:</h2>
             <h3>Please visit the link for cooking directions</h3>
             {this.state.recipe && 
-            <Link><span>{this.state.recipe.url}</span></Link>
+            <Link to={this.state.recipe.url}><span className="og-url">{this.state.recipe.url}</span></Link>
             }
         </div>
       
