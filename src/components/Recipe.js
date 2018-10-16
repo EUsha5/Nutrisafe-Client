@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Recipe extends Component {
   constructor(props){
@@ -34,15 +35,15 @@ getRecipe = () => {
   render() {
     return(
       <div className="recipe-height">
+      <div>
+      {this.state.recipe && 
+        <h1>{this.state.recipe.label}</h1>
+      }
         <div className="recipe-img">
         {this.state.recipe &&
          <img src={this.state.recipe.image} alt=""/>
       }
         </div>
-      <div>
-      {this.state.recipe && 
-        <h1>{this.state.recipe.label}</h1>
-      }
       </div>
         <div className="nutri-values">
           <p>Nutrional Values:</p> 
@@ -63,6 +64,7 @@ getRecipe = () => {
         </div>
         <div>
           <h2 className="recipe-ingredients">Ingredients:</h2>
+
         </div>
         <div>
         {this.state.recipe && 
@@ -75,7 +77,7 @@ getRecipe = () => {
           <h2>Instructions:</h2>
             <h3>Please visit the link for cooking directions</h3>
             {this.state.recipe && 
-            <span>{this.state.recipe.url}</span>
+            <Link><span>{this.state.recipe.url}</span></Link>
             }
         </div>
       

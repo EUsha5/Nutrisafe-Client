@@ -53,7 +53,7 @@ handleFormSubmit = (event) => {
   event.preventDefault();
   axios.put(process.env.REACT_APP_API_URL + `/profile/${this.props.loggedInUser._id}`,{aboutme}, { withCredentials: true })
   .then((response) => {
-    this.setState = "";
+    this.setState({aboutme: ""});
 console.log('*********RESPONSE*******', response)
   })
   .catch(err => {

@@ -8,7 +8,7 @@ class RecipeBook extends Component {
   }
   deleteBook = () => {
     const { params } = this.props.match;
-    axios.delete(`http://localhost:5000/api/book/${params.id}`)
+    axios.delete(process.env.REACT_APP_API_URL + `/book/${params.id}`)
     .then( responseFromApi =>{
         this.props.history.push('/profile'); // !!!         
     })

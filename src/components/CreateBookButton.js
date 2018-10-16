@@ -41,7 +41,7 @@ class Child extends Component {
     const title = this.state.title;
     event.preventDefault()
     this.props.getData();
-    axios.post(process.env.REACT_APP_API_URL + "/profile/book/create", {title}, { withCredentials: true })
+    axios.post(process.env.REACT_APP_API_URL + "/book/create", {title}, { withCredentials: true })
     .then(() => {
       this.setState({
         title: ''

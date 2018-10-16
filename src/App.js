@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Switch, Route, Router} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import AuthService from './components/user/authService';
 import Signup from './components/user/Signup';
 import Login from './components/user/Login';
@@ -58,8 +58,8 @@ class App extends Component {
           <Route exact path="/book/:id" {...this.props} component={RecipeBook} />
           <Route exact path="/recipes/searchResults" {...this.props} component={Recipe} />
 
-      <Footer />
        </Switch>
+      <Footer />
       </div>
     );
   }
