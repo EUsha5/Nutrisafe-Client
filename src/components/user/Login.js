@@ -43,7 +43,7 @@ class Login extends Component {
     // console.log(this.service.login)
     
     return(
-      <div className="auth">
+      <div className="auth bg-img-bw">
         <form className="auth-form" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input className="input" type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>

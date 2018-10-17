@@ -18,7 +18,7 @@ class RecipeBook extends Component {
   }
   render() {
     return(
-      <div className="page-height">
+      <div className="page-height bg-img-bw">
         <h1>Book Title</h1>
         <button onClick={() => this.deleteBook()}>Delete Book</button>
         <br />

@@ -56,10 +56,36 @@ a {
   background-color: rgb(22, 63, 130);
 }
 
+/* .bg-img-bw {
+  filter: grayscale(100%); 
+  background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  z-index: -1;
+  position: absolute;
+  content: "";
+} */
+
+.bg-img-bw:before {
+  filter: grayscale(100%);
+  background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  z-index: -1;
+  content: '';
+  position: absolute;
+}
 
 .auth {
-  background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg);
-  background-size: cover;
+  /* background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg); */
+  /* background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg); */
+  /* background-size: cover;
+  background-position: center center; */
+
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -67,6 +93,7 @@ a {
   flex-direction: column;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: rgb(151, 158, 168);
+  /* z-index: -1; */
 }
 
 .auth-form {
@@ -78,6 +105,7 @@ a {
   flex-direction: column;
   background-color: rgba(50,220,100, 0.9);
   border-radius: 19px;
+  z-index: 1;
 }
 
 .no-acct {
@@ -117,10 +145,11 @@ ul{
 }
 
 .page-height {
-  background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg);
+  /* background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg); */
   background-size: cover;
   height: 100vh;
   display: flex;
+  z-index: 1;
   justify-content: start;
   align-items: center;
   flex-direction: column;
@@ -129,8 +158,10 @@ ul{
 }
 
 .profile-height {
-  height: 100%;
-  background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg);
+  height: 100vh;
+  z-index: 1;
+  min-height: 100%;
+  /* background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg); */
   background-size: cover;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: rgb(151, 158, 168);
@@ -177,15 +208,12 @@ ul{
   flex-direction: column;
 }
 
-.bg-img-bw {
-  filter: grayscale(100%); 
-  background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
-}
 
 .recipe-height {
-  
+  /* background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg); */
+  z-index: 1;
   background-size: cover;
-  min-height: 100%;
+  min-height: 100vh;
   height: 100%;
   display: flex;
   align-items: center;

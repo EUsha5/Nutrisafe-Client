@@ -66,12 +66,17 @@ handleChange = (event) => {
   this.setState({[name]: value});
 }
 
+// bookTotal = () => {
+//   const books = this.props.loggedInUser.recipebook;
+//   if(this.props.loggedInUser.recipebook  )
+// }
+
 render() {
     // console.log('++++++++++LITTLEBOOK+++++++++', this.showAllBooks)
     // console.log('___________User________', this.props.loggedInUser.recipebook)
     console.log('&&&&&&&&&&ABOUTME&&&&&&&&&&&',this.props.loggedInUser.aboutme)
     return (
-      <div className="profile-height">
+      <div className="profile-height bg-img-bw">
         <div className="profile-info">
           <div className="about-me">
             <h2 className="about-title">About {this.props.loggedInUser.firstName}:</h2>

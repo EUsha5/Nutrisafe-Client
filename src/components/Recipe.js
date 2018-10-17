@@ -34,7 +34,7 @@ getRecipe = () => {
 
   render() {
     return(
-      <div className="recipe-height">
+      <div className="recipe-height bg-img-bw">
       <div>
       {this.state.recipe && 
         <h1>{this.state.recipe.label}</h1>

@@ -39,7 +39,8 @@ class Signup extends Component {
 
     return(
     // 
-      <div className="auth">
+      <div>
+        <div className="auth bg-img-bw">
         <form className="auth-form" onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input className="input" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)}/>
@@ -63,8 +64,10 @@ class Signup extends Component {
           <p>Already have account?</p>
           <Link className="submit-btn" to={"/"}>Login</Link>
         </div>
+        </div>
 
       </div>
+        
     )
   }
 }
