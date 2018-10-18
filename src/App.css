@@ -1,5 +1,6 @@
 body {
   min-height: 100%;
+  color: rgb(22, 63, 130);
 }
 
 .App {
@@ -44,8 +45,8 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: rgb(22, 63, 130);
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 
 }
 
@@ -56,28 +57,23 @@ a {
   background-color: rgb(22, 63, 130);
 }
 
-/* .bg-img-bw {
-  filter: grayscale(100%); 
-  background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  background-position: center center;
-  z-index: -1;
-  position: absolute;
-  content: "";
-} */
 
 .bg-img-bw:before {
   filter: grayscale(100%);
   background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
   background-size: cover;
   height: 100%;
+  min-height: 100%;
+  overflow: hidden;
   width: 100%;
   background-position: center center;
   z-index: -1;
   content: '';
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .auth {
@@ -85,14 +81,13 @@ a {
   /* background: url(https://whalebonemag.com/wp-content/uploads/2015/08/DSC_4647-Edit-1050x701.jpg); */
   /* background-size: cover;
   background-position: center center; */
-
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: rgb(151, 158, 168);
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  /* color: rgb(151, 158, 168); */
   /* z-index: -1; */
 }
 
@@ -112,8 +107,8 @@ a {
   border: 1px solid black;
   background-color: rgba(50,220,100, 0.9);
   border-radius: 5px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: rgb(151, 158, 168);
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  /* color: rgb(151, 158, 168); */
   padding: 0 5px 5px 5px;
 }
 
@@ -153,8 +148,8 @@ ul{
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: rgb(151, 158, 168);
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  /* color: rgb(151, 158, 168); */
 }
 
 .profile-height {
@@ -163,8 +158,8 @@ ul{
   min-height: 100%;
   /* background: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg); */
   background-size: cover;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: rgb(151, 158, 168);
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  /* color: rgb(151, 158, 168); */
 }
 
 .profile-info{ 
@@ -218,8 +213,8 @@ ul{
   display: flex;
   align-items: center;
   flex-direction: column;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: rgb(151, 158, 168);
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+  /* color: rgb(151, 158, 168); */
 }
 
 .recipe-img {
