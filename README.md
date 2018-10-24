@@ -1,3 +1,14 @@
+NurtiSafe
+
+created by Eran Usha
+
+NutriSafe is a recipe create/search web app.  Allowing Users the opportunity to see real-time nutritional values and dietary/health labels associated with the recipe they are viewing or creating. 
+
+This project is still underconstruction
+
+live url:  http://nutrisafe.herokuapp.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
